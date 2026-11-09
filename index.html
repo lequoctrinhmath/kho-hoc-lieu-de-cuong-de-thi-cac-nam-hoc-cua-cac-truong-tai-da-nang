@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lớp Toán Thầy Trịnh – Kho đề thi Đà Nẵng</title>
+<style>
+:root{--bg:#f5f8fc;--card:#fff;--text:#1b2733;--muted:#5b6b7a;--main:#1F4E79;--line:#d8e1ea}
+@media (prefers-color-scheme:dark){:root{--bg:#10161d;--card:#18212b;--text:#e8eef4;--muted:#9fb0c0;--main:#6fb1ea;--line:#2a3745}}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+header{background:#1F4E79;color:#fff;padding:28px 16px;text-align:center}
+header h1{margin:0 0 6px;font-size:1.7rem}
+header p{margin:0;opacity:.92}
+header a{color:#fff;font-weight:700;text-decoration:none;border:1px solid #fff;border-radius:20px;padding:4px 14px;display:inline-block;margin-top:10px}
+main{max-width:900px;margin:0 auto;padding:18px 14px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.filters input,.filters select{flex:1 1 150px;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--text);font-size:1rem}
+.filters input{flex:2 1 240px}
+.item{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin-bottom:10px;display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.item h3{margin:0 0 4px;font-size:1.05rem}
+.tag{display:inline-block;font-size:.8rem;color:var(--main);border:1px solid var(--main);border-radius:12px;padding:0 8px;margin-right:4px}
+.btn{background:#1F4E79;color:#fff;text-decoration:none;padding:8px 16px;border-radius:8px;font-weight:600;white-space:nowrap}
+.empty{text-align:center;color:var(--muted);padding:30px}
+footer{text-align:center;color:var(--muted);padding:20px 10px 30px;font-size:.95rem}
+</style>
+</head>
+<body>
+<header>
+  <h1>Lớp Toán Thầy Trịnh</h1>
+  <p>Kho đề thi – đề cương Toán các trường tại Đà Nẵng (file Word, tải miễn phí)</p>
+  <a href="tel:0936032378">Liên hệ: 0936032378</a>
+</header>
+
+<main>
+  <div class="filters">
+    <input id="q" type="search" placeholder="Tìm theo tên trường, năm học...">
+    <select id="fGrade"><option value="">Tất cả khối</option></select>
+    <select id="fType"><option value="">Tất cả loại đề</option></select>
+  </div>
+  <div id="list"></div>
+</main>
+
+<footer>© Lớp Toán Thầy Trịnh – 0936032378</footer>
+
+<script>
+/* ============================================================
+   CÁCH THÊM ĐỀ MỚI: sao chép nguyên một khối { ... }, dán thêm
+   xuống dưới (nhớ có dấu phẩy cuối khối), rồi sửa nội dung.
+   Đặt file Word vào thư mục "tai-lieu" cùng chỗ với trang này.
+   ============================================================ */
+const DE = [
+  {
+    ten: "Đề giữa kì I – Toán 10 – Mã đề 101",
+    truong: "THPT Phan Châu Trinh",
+    khoi: "Lớp 10",
+    loai: "Giữa kì I",
+    nam: "2025-2026",
+    file: "tai-lieu/De_Giua_Ki_1_Toan_10_Phan_Chau_Trinh_2025-2026_Ma_de_101.docx"
+  },
+];
+
+const $ = id => document.getElementById(id);
+const uniq = k => [...new Set(DE.map(d => d[k]))].sort();
+uniq("khoi").forEach(v => $("fGrade").add(new Option(v, v)));
+uniq("loai").forEach(v => $("fType").add(new Option(v, v)));
+
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+
+function render(){
+  const q = $("q").value.trim().toLowerCase();
+  const g = $("fGrade").value, t = $("fType").value;
+  const rows = DE.filter(d =>
+    (!g || d.khoi === g) && (!t || d.loai === t) &&
+    (!q || [d.ten,d.truong,d.nam,d.khoi,d.loai].join(" ").toLowerCase().includes(q))
+  );
+  $("list").innerHTML = rows.length ? rows.map(d => `
+    <div class="item">
+      <div>
+        <h3>${esc(d.ten)}</h3>
+        <span class="tag">${esc(d.truong)}</span><span class="tag">${esc(d.khoi)}</span>
+        <span class="tag">${esc(d.loai)}</span><span class="tag">${esc(d.nam)}</span>
+      </div>
+      <a class="btn" href="${esc(d.file)}" download>Tải file Word</a>
+    </div>`).join("") : '<div class="empty">Chưa có đề phù hợp.</div>';
+}
+["q","fGrade","fType"].forEach(id => $(id).addEventListener("input", render));
+render();
+</script>
+</body>
+</html>
