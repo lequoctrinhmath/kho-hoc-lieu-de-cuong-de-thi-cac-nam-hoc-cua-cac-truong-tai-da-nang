@@ -21,6 +21,8 @@ main{max-width:900px;margin:0 auto;padding:18px 14px}
 .item h3{margin:0 0 4px;font-size:1.05rem}
 .tag{display:inline-block;font-size:.8rem;color:var(--main);border:1px solid var(--main);border-radius:12px;padding:0 8px;margin-right:4px}
 .btn{background:#1F4E79;color:#fff;text-decoration:none;padding:8px 16px;border-radius:8px;font-weight:600;white-space:nowrap}
+.btns{display:flex;gap:8px}
+.btn.alt{background:transparent;color:var(--main);border:1px solid var(--main)}
 .empty{text-align:center;color:var(--muted);padding:30px}
 footer{text-align:center;color:var(--muted);padding:20px 10px 30px;font-size:.95rem}
 </style>
@@ -28,7 +30,7 @@ footer{text-align:center;color:var(--muted);padding:20px 10px 30px;font-size:.95
 <body>
 <header>
   <h1>Lớp Toán Thầy Trịnh</h1>
-  <p>Kho đề thi – đề cương Toán các trường tại Đà Nẵng (file Word, tải miễn phí)</p>
+  <p>Kho đề thi – đề cương Toán các trường tại Đà Nẵng (xem PDF, tải Word miễn phí)</p>
   <a href="tel:0936032378">Liên hệ: 0936032378</a>
 </header>
 
@@ -47,7 +49,7 @@ footer{text-align:center;color:var(--muted);padding:20px 10px 30px;font-size:.95
 /* ============================================================
    CÁCH THÊM ĐỀ MỚI: sao chép nguyên một khối { ... }, dán thêm
    xuống dưới (nhớ có dấu phẩy cuối khối), rồi sửa nội dung.
-   Đặt file Word vào thư mục "tai-lieu" cùng chỗ với trang này.
+   Đặt file PDF và Word vào thư mục "tai-lieu" cùng chỗ với trang này.
    ============================================================ */
 const DE = [
   {
@@ -56,7 +58,17 @@ const DE = [
     khoi: "Lớp 10",
     loai: "Giữa kì I",
     nam: "2025-2026",
+    pdf: "tai-lieu/De_Giua_Ki_1_Toan_10_Phan_Chau_Trinh_2025-2026_Ma_de_101.pdf",
     file: "tai-lieu/De_Giua_Ki_1_Toan_10_Phan_Chau_Trinh_2025-2026_Ma_de_101.docx"
+  },
+  {
+    ten: "Đề kiểm tra Toán 8 – Đề chính thức",
+    truong: "THCS Trưng Vương",
+    khoi: "Lớp 8",
+    loai: "Kiểm tra",
+    nam: "2026-2027",
+    pdf: "tai-lieu/De_Kiem_Tra_Toan_8_Trung_Vuong_2026-2027.pdf",
+    file: "tai-lieu/De_Kiem_Tra_Toan_8_Trung_Vuong_2026-2027.docx"
   },
 ];
 
@@ -81,7 +93,10 @@ function render(){
         <span class="tag">${esc(d.truong)}</span><span class="tag">${esc(d.khoi)}</span>
         <span class="tag">${esc(d.loai)}</span><span class="tag">${esc(d.nam)}</span>
       </div>
-      <a class="btn" href="${esc(d.file)}" download>Tải file Word</a>
+      <div class="btns">
+        ${d.pdf ? `<a class="btn alt" href="${esc(d.pdf)}" target="_blank" rel="noopener">Xem PDF</a>` : ""}
+        ${d.file ? `<a class="btn" href="${esc(d.file)}" download>Tải Word</a>` : ""}
+      </div>
     </div>`).join("") : '<div class="empty">Chưa có đề phù hợp.</div>';
 }
 ["q","fGrade","fType"].forEach(id => $(id).addEventListener("input", render));
