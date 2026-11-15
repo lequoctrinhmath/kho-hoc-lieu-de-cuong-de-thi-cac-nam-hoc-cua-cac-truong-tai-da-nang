@@ -25,16 +25,78 @@ main{max-width:900px;margin:0 auto;padding:18px 14px}
 .btn.alt{background:transparent;color:var(--main);border:1px solid var(--main)}
 .empty{text-align:center;color:var(--muted);padding:30px}
 footer{text-align:center;color:var(--muted);padding:20px 10px 30px;font-size:.95rem}
+
+/* ===== Thanh điều hướng + khu trắc nghiệm online ===== */
+html{scroll-behavior:smooth}
+header .nav{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+header .nav a{margin-top:0;padding:7px 18px;transition:transform .15s,background .15s}
+header .nav a:hover{transform:translateY(-2px);background:rgba(255,255,255,.14)}
+header .nav a.hot{background:#fff;color:#1F4E79;border-color:#fff}
+header .nav a.hot:hover{background:#eaf3fc}
+.quiz{position:relative;overflow:hidden;display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;
+  background:linear-gradient(135deg,#1F4E79 0%,#2a7aa8 55%,#19a39a 100%);color:#fff;border-radius:16px;padding:22px 24px;margin:2px 0 22px;
+  box-shadow:0 8px 24px rgba(31,78,121,.28)}
+.quiz::before,.quiz::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.09);pointer-events:none}
+.quiz::before{width:210px;height:210px;right:-60px;top:-90px}
+.quiz::after{width:140px;height:140px;right:150px;bottom:-80px}
+.quiz-text{position:relative;flex:1 1 320px}
+.badge{display:inline-block;background:#ffd24a;color:#5a3d00;font-weight:800;font-size:.72rem;letter-spacing:.5px;border-radius:12px;padding:2px 10px;margin-bottom:8px}
+.quiz h2{margin:0 0 6px;font-size:1.45rem;line-height:1.25}
+.quiz p{margin:0 0 12px;opacity:.95}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);border-radius:16px;padding:3px 12px;font-size:.88rem}
+.quiz-cta{position:relative;text-align:center;flex:0 0 auto}
+.quiz-cta .go{display:inline-block;background:#fff;color:#1F4E79;font-weight:800;font-size:1.08rem;text-decoration:none;border-radius:28px;padding:13px 28px;
+  box-shadow:0 6px 16px rgba(0,0,0,.22);transition:transform .15s,box-shadow .15s}
+.quiz-cta .go:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(0,0,0,.28)}
+.quiz-cta small{display:block;margin-top:8px;max-width:230px;opacity:.85;font-size:.78rem;line-height:1.35}
+.sec{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:6px 0 12px;padding-bottom:8px;border-bottom:2px solid var(--line)}
+.sec h2{margin:0;font-size:1.3rem;color:var(--main)}
+.sec span{color:var(--muted);font-size:.92rem}
+.fab{position:fixed;right:16px;bottom:16px;z-index:50;background:linear-gradient(135deg,#1F4E79,#19a39a);color:#fff;text-decoration:none;font-weight:700;
+  border-radius:30px;padding:12px 20px;box-shadow:0 8px 20px rgba(0,0,0,.3);transition:transform .15s}
+.fab:hover{transform:translateY(-3px)}
+footer{padding-bottom:80px}
+@media (max-width:560px){
+  .quiz{padding:18px 16px}
+  .quiz h2{font-size:1.25rem}
+  .quiz-cta{flex:1 1 100%}
+  .quiz-cta .go{display:block}
+  .quiz-cta small{max-width:none}
+  .fab{left:16px;right:16px;text-align:center}
+}
 </style>
 </head>
 <body>
 <header>
   <h1>Lớp Toán Thầy Trịnh</h1>
   <p>Kho đề thi – đề cương Toán các trường tại Đà Nẵng (xem PDF, tải Word miễn phí)</p>
-  <a href="tel:0936032378">Liên hệ: 0936032378</a>
+  <div class="nav">
+    <a class="hot" href="https://lop-toan-thay-trinh.onrender.com/" target="_blank" rel="noopener">📝 Làm trắc nghiệm online</a>
+    <a href="#kho-de">📚 Kho đề thi</a>
+    <a href="tel:0936032378">📞 Liên hệ: 0936032378</a>
+  </div>
 </header>
 
 <main>
+  <section class="quiz">
+    <div class="quiz-text">
+      <span class="badge">MỚI</span>
+      <h2>Luyện trắc nghiệm Toán online</h2>
+      <p>Làm bài trắc nghiệm Toán trực tiếp trên web, ôn tập mọi lúc mọi nơi cùng Lớp Toán Thầy Trịnh.</p>
+      <div class="chips"><span>✔ Làm trực tiếp trên web</span><span>✔ Dùng được trên điện thoại &amp; máy tính</span></div>
+    </div>
+    <div class="quiz-cta">
+      <a class="go" href="https://lop-toan-thay-trinh.onrender.com/" target="_blank" rel="noopener">Vào làm trắc nghiệm →</a>
+      <small>Lần đầu mở có thể phải chờ vài chục giây để hệ thống khởi động.</small>
+    </div>
+  </section>
+
+  <div class="sec" id="kho-de">
+    <h2>📚 Kho đề thi &amp; đề cương</h2>
+    <span id="count"></span>
+  </div>
+
   <div class="filters">
     <input id="q" type="search" placeholder="Tìm theo tên trường, năm học...">
     <select id="fGrade"><option value="">Tất cả khối</option></select>
@@ -43,6 +105,8 @@ footer{text-align:center;color:var(--muted);padding:20px 10px 30px;font-size:.95
   </div>
   <div id="list"></div>
 </main>
+
+<a class="fab" href="https://lop-toan-thay-trinh.onrender.com/" target="_blank" rel="noopener">📝 Làm trắc nghiệm</a>
 
 <footer>© Lớp Toán Thầy Trịnh – 0936032378</footer>
 
@@ -430,6 +494,7 @@ function render(){
     (!g || d.khoi === g) && (!t || d.loai === t) && (!y || d.nam === y) &&
     (!q || [d.ten,d.truong,d.nam,d.khoi,d.loai].join(" ").toLowerCase().includes(q))
   );
+  $("count").textContent = rows.length === DE.length ? DE.length + " tài liệu" : rows.length + " / " + DE.length + " tài liệu";
   $("list").innerHTML = rows.length ? rows.map(d => `
     <div class="item">
       <div>
