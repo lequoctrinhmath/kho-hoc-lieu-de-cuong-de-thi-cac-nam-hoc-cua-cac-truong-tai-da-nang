@@ -490,7 +490,7 @@ function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;","
 function render(){
   const q = $("q").value.trim().toLowerCase();
   const g = $("fGrade").value, t = $("fType").value, y = $("fYear").value;
-  const rows = DE.filter(d =>
+  const rows = [...DE].reverse().filter(d =>   /* đề thêm sau cùng hiện lên đầu trang */
     (!g || d.khoi === g) && (!t || d.loai === t) && (!y || d.nam === y) &&
     (!q || [d.ten,d.truong,d.nam,d.khoi,d.loai].join(" ").toLowerCase().includes(q))
   );
