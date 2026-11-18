@@ -149,6 +149,8 @@ def main():
 def build_entry(stem, parsed, f, schools):
     loai, head, grade, slug, year, note = parsed
     school = schools.get(slug) or fallback_school(slug, grade)
+    if grade.isdigit() and int(grade) >= 10 and school.startswith("THCS "):
+        school = "THPT " + school[5:]          # lớp 10-12 thì là trường THPT
     return {
         "ten": f"{head} Toán {grade} Trường {school} năm học {year}{note_text(note)}",
         "truong": school,
