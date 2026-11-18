@@ -6,7 +6,8 @@ on:
       - "tai-lieu/**"
       - "schools.json"
       - "scripts/build_docs.py"
-  workflow_dispatch:        # cho phép bấm chạy tay trong tab Actions
+      - "build_docs.py"
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -20,7 +21,9 @@ jobs:
         with:
           python-version: "3.x"
       - name: Dựng docs.json từ thư mục tai-lieu
-        run: python scripts/build_docs.py
+        run: |
+          if [ ! -f scripts/build_docs.py ]; then mkdir -p scripts && cp build_docs.py scripts/build_docs.py; fi
+          python scripts/build_docs.py
       - name: Lưu kết quả
         run: |
           git config user.name "github-actions[bot]"
