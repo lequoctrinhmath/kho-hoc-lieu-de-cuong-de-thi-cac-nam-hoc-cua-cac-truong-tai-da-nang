@@ -67,17 +67,18 @@ def note_text(note):
     if not note:
         return ""
     t = " ".join(note)
-    m = re.match(r"^Ma de (\w+)$", t)
+    m = re.match(r"^Ma de (\w+)$", t, re.I)
     if m:
         return f" – Mã đề {m.group(1)}"
-    m = re.match(r"^De (\w+)$", t)
+    m = re.match(r"^De (\w+)$", t, re.I)
     if m:
         return f" – Đề {m.group(1)}"
     return " – " + t
 
 
-def fallback_school(slug):
-    return "THCS " + slug.replace("_", " ")
+def fallback_school(slug, grade="8"):
+    level = "THPT" if str(grade).isdigit() and int(grade) >= 10 else "THCS"
+    return f"{level} " + slug.replace("_", " ")
 
 
 def main():
@@ -132,7 +133,7 @@ def main():
             continue
         slug = parsed[3]
         if slug not in schools:
-            schools[slug] = fallback_school(slug)
+            schools[slug] = fallback_school(slug, parsed[2])
             warnings.append(f"Trường mới '{slug}' chưa có trong schools.json — đang dùng tên tạm '{schools[slug]}', hãy sửa lại cho đúng dấu.")
         result.append(build_entry(s, parsed, files[s], schools))
         added += 1
@@ -147,7 +148,9 @@ def main():
 
 def build_entry(stem, parsed, f, schools):
     loai, head, grade, slug, year, note = parsed
-    school = schools.get(slug) or fallback_school(slug)
+    school = schools.get(slug) or fallback_school(slug, grade)
+    if grade.isdigit() and int(grade) >= 10 and school.startswith("THCS "):
+        school = "THPT " + school[5:]          # lớp 10-12 thì là trường THPT
     return {
         "ten": f"{head} Toán {grade} Trường {school} năm học {year}{note_text(note)}",
         "truong": school,
