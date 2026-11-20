@@ -688,5 +688,55 @@
     "pdf": "tai-lieu/De_Cuong_Giua_Ki_2_Toan_8_Trung_Vuong_2025-2026.pdf",
     "file": "tai-lieu/De_Cuong_Giua_Ki_2_Toan_8_Trung_Vuong_2025-2026.docx",
     "auto": true
+  },
+  {
+    "ten": "Đề cương ôn tập giữa kì 2 Toán 7 Trường THCS Nguyễn Huệ năm học 2025-2026",
+    "truong": "THCS Nguyễn Huệ",
+    "khoi": "Lớp 7",
+    "loai": "Đề cương",
+    "nam": "2025-2026",
+    "pdf": "tai-lieu/De_Cuong_On_Tap_Giua_Ki_2_Toan_7_Nguyen_Hue_2025-2026.pdf",
+    "file": "tai-lieu/De_Cuong_On_Tap_Giua_Ki_2_Toan_7_Nguyen_Hue_2025-2026.docx",
+    "auto": true
+  },
+  {
+    "ten": "Đề cương ôn tập giữa kì 2 Toán 7 Trường THCS Nguyễn Trãi năm học 2025-2026",
+    "truong": "THCS Nguyễn Trãi",
+    "khoi": "Lớp 7",
+    "loai": "Đề cương",
+    "nam": "2025-2026",
+    "pdf": "tai-lieu/De_Cuong_On_Tap_Giua_Ki_2_Toan_7_Nguyen_Trai_2025-2026.pdf",
+    "file": "tai-lieu/De_Cuong_On_Tap_Giua_Ki_2_Toan_7_Nguyen_Trai_2025-2026.docx",
+    "auto": true
+  },
+  {
+    "ten": "Đề cương ôn tập giữa kì 2 Toán 8 Trường THCS Lê Độ năm học 2025-2026",
+    "truong": "THCS Lê Độ",
+    "khoi": "Lớp 8",
+    "loai": "Đề cương",
+    "nam": "2025-2026",
+    "pdf": "tai-lieu/De_Cuong_On_Tap_Giua_Ki_2_Toan_8_Le_Do_2025-2026.pdf",
+    "file": "tai-lieu/De_Cuong_On_Tap_Giua_Ki_2_Toan_8_Le_Do_2025-2026.docx",
+    "auto": true
+  },
+  {
+    "ten": "Đề cương ôn tập giữa kì 2 Toán 9 Trường THCS Nguyễn Thiện Thuật năm học 2025-2026",
+    "truong": "THCS Nguyễn Thiện Thuật",
+    "khoi": "Lớp 9",
+    "loai": "Đề cương",
+    "nam": "2025-2026",
+    "pdf": "tai-lieu/De_Cuong_On_Tap_Giua_Ki_2_Toan_9_Nguyen_Thien_Thuat_2025-2026.pdf",
+    "file": "tai-lieu/De_Cuong_On_Tap_Giua_Ki_2_Toan_9_Nguyen_Thien_Thuat_2025-2026.docx",
+    "auto": true
+  },
+  {
+    "ten": "Đề cương ôn tập giữa kì 2 Toán 9 Trường THCS Phan Boi Chau năm học 2025-2026",
+    "truong": "THCS Phan Boi Chau",
+    "khoi": "Lớp 9",
+    "loai": "Đề cương",
+    "nam": "2025-2026",
+    "pdf": "tai-lieu/De_Cuong_On_Tap_Giua_Ki_2_Toan_9_Phan_Boi_Chau_2025-2026.pdf",
+    "file": "tai-lieu/De_Cuong_On_Tap_Giua_Ki_2_Toan_9_Phan_Boi_Chau_2025-2026.docx",
+    "auto": true
   }
 ]
