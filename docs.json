@@ -758,5 +758,35 @@
     "pdf": "tai-lieu/De_Cuong_Giua_Ki_2_Toan_7_Chu_Van_An_2025-2026.pdf",
     "file": "tai-lieu/De_Cuong_Giua_Ki_2_Toan_7_Chu_Van_An_2025-2026.docx",
     "auto": true
+  },
+  {
+    "ten": "Đề cương ôn tập giữa kì 2 Toán 7 Trường THCS Trần Đại Nghĩa năm học 2025-2026",
+    "truong": "THCS Trần Đại Nghĩa",
+    "khoi": "Lớp 7",
+    "loai": "Đề cương",
+    "nam": "2025-2026",
+    "pdf": "tai-lieu/De_Cuong_On_Tap_Giua_Ki_2_Toan_7_Tran_Dai_Nghia_2025-2026.pdf",
+    "file": "tai-lieu/De_Cuong_On_Tap_Giua_Ki_2_Toan_7_Tran_Dai_Nghia_2025-2026.docx",
+    "auto": true
+  },
+  {
+    "ten": "Đề thi giữa kì 2 Toán 8 Trường THCS Trưng Vương năm học 2025-2026",
+    "truong": "THCS Trưng Vương",
+    "khoi": "Lớp 8",
+    "loai": "Giữa kì II",
+    "nam": "2025-2026",
+    "pdf": "tai-lieu/De_Giua_Ki_2_Toan_8_Trung_Vuong_2025-2026.pdf",
+    "file": "tai-lieu/De_Giua_Ki_2_Toan_8_Trung_Vuong_2025-2026.docx",
+    "auto": true
+  },
+  {
+    "ten": "Đề thi giữa kì 2 Toán 9 Trường THCS Đỗ Đăng Tuyển năm học 2025-2026 – Đề B",
+    "truong": "THCS Đỗ Đăng Tuyển",
+    "khoi": "Lớp 9",
+    "loai": "Giữa kì II",
+    "nam": "2025-2026",
+    "pdf": "tai-lieu/De_Giua_Ki_2_Toan_9_Do_Dang_Tuyen_2025-2026_De_B.pdf",
+    "file": "tai-lieu/De_Giua_Ki_2_Toan_9_Do_Dang_Tuyen_2025-2026_De_B.docx",
+    "auto": true
   }
 ]
