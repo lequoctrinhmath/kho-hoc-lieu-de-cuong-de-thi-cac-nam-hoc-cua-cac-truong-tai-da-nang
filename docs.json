@@ -828,5 +828,35 @@
     "pdf": "tai-lieu/De_Giua_Ki_2_Toan_6_Trung_Vuong_2025-2026.pdf",
     "file": "tai-lieu/De_Giua_Ki_2_Toan_6_Trung_Vuong_2025-2026.docx",
     "auto": true
+  },
+  {
+    "ten": "Đề thi giữa kì 2 Toán 6 Trường THCS Chu Văn An năm học 2025-2026 – Đề 1",
+    "truong": "THCS Chu Văn An",
+    "khoi": "Lớp 6",
+    "loai": "Giữa kì II",
+    "nam": "2025-2026",
+    "pdf": "tai-lieu/De_Giua_Ki_2_Toan_6_Chu_Van_An_2025-2026_De_1.pdf",
+    "file": "tai-lieu/De_Giua_Ki_2_Toan_6_Chu_Van_An_2025-2026_De_1.docx",
+    "auto": true
+  },
+  {
+    "ten": "Đề thi giữa kì 2 Toán 6 Trường THCS Lê Lợi năm học 2025-2026 – Đề A",
+    "truong": "THCS Lê Lợi",
+    "khoi": "Lớp 6",
+    "loai": "Giữa kì II",
+    "nam": "2025-2026",
+    "pdf": "tai-lieu/De_Giua_Ki_2_Toan_6_Le_Loi_2025-2026_De_A.pdf",
+    "file": "tai-lieu/De_Giua_Ki_2_Toan_6_Le_Loi_2025-2026_De_A.docx",
+    "auto": true
+  },
+  {
+    "ten": "Đề thi giữa kì 2 Toán 9 Trường THCS Nguyen Thi Dinh năm học 2025-2026 – Đề A",
+    "truong": "THCS Nguyen Thi Dinh",
+    "khoi": "Lớp 9",
+    "loai": "Giữa kì II",
+    "nam": "2025-2026",
+    "pdf": "tai-lieu/De_Giua_Ki_2_Toan_9_Nguyen_Thi_Dinh_2025-2026_De_A.pdf",
+    "file": "tai-lieu/De_Giua_Ki_2_Toan_9_Nguyen_Thi_Dinh_2025-2026_De_A.docx",
+    "auto": true
   }
 ]
