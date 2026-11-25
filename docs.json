@@ -928,5 +928,55 @@
     "pdf": "tai-lieu/De_Cuoi_Ki_1_Toan_10_Phan_Chau_Trinh_2025-2026_Ma_De_104.pdf",
     "file": "tai-lieu/De_Cuoi_Ki_1_Toan_10_Phan_Chau_Trinh_2025-2026_Ma_De_104.docx",
     "auto": true
+  },
+  {
+    "ten": "Đề thi giữa kì 2 Toán 6 Trường THCS Huỳnh Thúc Kháng năm học 2025-2026 – Đề 2",
+    "truong": "THCS Huỳnh Thúc Kháng",
+    "khoi": "Lớp 6",
+    "loai": "Giữa kì II",
+    "nam": "2025-2026",
+    "pdf": "tai-lieu/De_Giua_Ki_2_Toan_6_Huynh_Thuc_Khang_2025-2026_De_2.pdf",
+    "file": "tai-lieu/De_Giua_Ki_2_Toan_6_Huynh_Thuc_Khang_2025-2026_De_2.docx",
+    "auto": true
+  },
+  {
+    "ten": "Đề thi giữa kì 2 Toán 8 Trường THCS Huỳnh Thúc Kháng năm học 2025-2026 – Đề 2",
+    "truong": "THCS Huỳnh Thúc Kháng",
+    "khoi": "Lớp 8",
+    "loai": "Giữa kì II",
+    "nam": "2025-2026",
+    "pdf": "tai-lieu/De_Giua_Ki_2_Toan_8_Huynh_Thuc_Khang_2025-2026_De_2.pdf",
+    "file": "tai-lieu/De_Giua_Ki_2_Toan_8_Huynh_Thuc_Khang_2025-2026_De_2.docx",
+    "auto": true
+  },
+  {
+    "ten": "Đề thi giữa kì 2 Toán 9 Trường THCS Huỳnh Thúc Kháng năm học 2025-2026 – Đề 1",
+    "truong": "THCS Huỳnh Thúc Kháng",
+    "khoi": "Lớp 9",
+    "loai": "Giữa kì II",
+    "nam": "2025-2026",
+    "pdf": "tai-lieu/De_Giua_Ki_2_Toan_9_Huynh_Thuc_Khang_2025-2026_De_1.pdf",
+    "file": "tai-lieu/De_Giua_Ki_2_Toan_9_Huynh_Thuc_Khang_2025-2026_De_1.docx",
+    "auto": true
+  },
+  {
+    "ten": "Đề thi giữa kì 2 Toán 9 Trường THCS Trần Hưng Đạo năm học 2025-2026",
+    "truong": "THCS Trần Hưng Đạo",
+    "khoi": "Lớp 9",
+    "loai": "Giữa kì II",
+    "nam": "2025-2026",
+    "pdf": "tai-lieu/De_Giua_Ki_2_Toan_9_Tran_Hung_Dao_2025-2026.pdf",
+    "file": "tai-lieu/De_Giua_Ki_2_Toan_9_Tran_Hung_Dao_2025-2026.docx",
+    "auto": true
+  },
+  {
+    "ten": "Đề thi giữa kì 2 Toán 9 Trường THCS Trưng Vương năm học 2025-2026",
+    "truong": "THCS Trưng Vương",
+    "khoi": "Lớp 9",
+    "loai": "Giữa kì II",
+    "nam": "2025-2026",
+    "pdf": "tai-lieu/De_Giua_Ki_2_Toan_9_Trung_Vuong_2025-2026.pdf",
+    "file": "tai-lieu/De_Giua_Ki_2_Toan_9_Trung_Vuong_2025-2026.docx",
+    "auto": true
   }
 ]
