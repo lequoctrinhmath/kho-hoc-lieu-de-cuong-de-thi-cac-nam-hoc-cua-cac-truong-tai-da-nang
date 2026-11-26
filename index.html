@@ -84,6 +84,11 @@ footer{padding-bottom:80px}
 .ratio{position:relative;width:100%;padding-top:56.25%;background:#000;border-radius:10px;overflow:hidden}
 .ratio iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .modal-foot{margin-top:10px;display:flex;gap:10px;flex-wrap:wrap}
+
+.social{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center;margin-bottom:10px}
+.social span{font-weight:600}
+.social a{color:var(--main);text-decoration:none;font-weight:700;border:1px solid var(--main);border-radius:20px;padding:5px 14px;transition:transform .15s,background .15s}
+.social a:hover{transform:translateY(-2px);background:var(--line)}
 </style>
 </head>
 <body>
@@ -93,6 +98,8 @@ footer{padding-bottom:80px}
   <div class="nav">
     <a data-track="lien-ket/trac-nghiem-online" data-title="Nút vào app trắc nghiệm" class="hot" href="https://lop-toan-thay-trinh.onrender.com/" target="_blank" rel="noopener">📝 Làm trắc nghiệm online</a>
     <a href="#kho-de">📚 Kho đề thi</a>
+    <a data-track="lien-ket/youtube" data-title="Kênh YouTube" href="https://www.youtube.com/@ToanThayTrinh-d43n" target="_blank" rel="noopener">▶ Kênh YouTube</a>
+    <a data-track="lien-ket/facebook" data-title="Fanpage Facebook" href="https://www.facebook.com/loptoanthaytrinh" target="_blank" rel="noopener">👍 Fanpage Facebook</a>
     <a href="tel:0936032378">📞 Liên hệ: 0936032378</a>
   </div>
 </header>
@@ -140,7 +147,15 @@ footer{padding-bottom:80px}
   </div>
 </div>
 
-<footer>© Lớp Toán Thầy Trịnh – 0936032378</footer>
+<footer>
+  <div class="social">
+    <span>Theo dõi Lớp Toán Thầy Trịnh:</span>
+    <a data-track="lien-ket/youtube" data-title="Kênh YouTube" href="https://www.youtube.com/@ToanThayTrinh-d43n" target="_blank" rel="noopener">▶ YouTube</a>
+    <a data-track="lien-ket/facebook" data-title="Fanpage Facebook" href="https://www.facebook.com/loptoanthaytrinh" target="_blank" rel="noopener">👍 Facebook</a>
+    <a href="tel:0936032378">📞 0936032378</a>
+  </div>
+  <div>© Lớp Toán Thầy Trịnh</div>
+</footer>
 
 <script>
 /* ============================================================
