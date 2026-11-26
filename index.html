@@ -65,6 +65,25 @@ footer{padding-bottom:80px}
   .quiz-cta small{max-width:none}
   .fab{left:16px;right:16px;text-align:center}
 }
+
+/* ===== Video giải & lời giải ===== */
+.btns{flex-wrap:wrap}
+.btn.video{background:#c4302b;border:1px solid #c4302b}
+.btn.giai{background:transparent;color:#1d7f4e;border:1px solid #1d7f4e}
+.tag.vid{color:#c4302b;border-color:#c4302b}
+.tag.sol{color:#1d7f4e;border-color:#1d7f4e}
+@media (prefers-color-scheme:dark){.btn.giai,.tag.sol{color:#5fd49a;border-color:#5fd49a}.btn.video{background:#d2423b;border-color:#d2423b}.tag.vid{color:#ff8a84;border-color:#ff8a84}}
+.only{display:flex;align-items:center;gap:8px;margin:-4px 0 14px;color:var(--muted);font-size:.95rem;cursor:pointer;user-select:none}
+.only input{width:18px;height:18px;accent-color:#c4302b}
+.modal{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.72);display:none;align-items:center;justify-content:center;padding:14px}
+.modal.open{display:flex}
+.modal-box{background:var(--card);color:var(--text);border-radius:14px;width:min(920px,100%);max-height:96vh;overflow:auto;padding:14px 14px 16px;box-shadow:0 20px 50px rgba(0,0,0,.45)}
+.modal-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:10px}
+.modal-title{font-weight:700;font-size:1.02rem;line-height:1.35}
+.modal-x{flex:0 0 auto;border:0;background:var(--line);color:var(--text);width:34px;height:34px;border-radius:50%;font-size:1.3rem;line-height:1;cursor:pointer}
+.ratio{position:relative;width:100%;padding-top:56.25%;background:#000;border-radius:10px;overflow:hidden}
+.ratio iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.modal-foot{margin-top:10px;display:flex;gap:10px;flex-wrap:wrap}
 </style>
 </head>
 <body>
@@ -72,7 +91,7 @@ footer{padding-bottom:80px}
   <h1>Lớp Toán Thầy Trịnh</h1>
   <p>Kho đề thi – đề cương Toán các trường tại Đà Nẵng (xem PDF, tải Word miễn phí)</p>
   <div class="nav">
-    <a class="hot" href="https://lop-toan-thay-trinh.onrender.com/" target="_blank" rel="noopener">📝 Làm trắc nghiệm online</a>
+    <a data-track="lien-ket/trac-nghiem-online" data-title="Nút vào app trắc nghiệm" class="hot" href="https://lop-toan-thay-trinh.onrender.com/" target="_blank" rel="noopener">📝 Làm trắc nghiệm online</a>
     <a href="#kho-de">📚 Kho đề thi</a>
     <a href="tel:0936032378">📞 Liên hệ: 0936032378</a>
   </div>
@@ -87,7 +106,7 @@ footer{padding-bottom:80px}
       <div class="chips"><span>✔ Làm trực tiếp trên web</span><span>✔ Dùng được trên điện thoại &amp; máy tính</span></div>
     </div>
     <div class="quiz-cta">
-      <a class="go" href="https://lop-toan-thay-trinh.onrender.com/" target="_blank" rel="noopener">Vào làm trắc nghiệm →</a>
+      <a data-track="lien-ket/trac-nghiem-online" data-title="Nút vào app trắc nghiệm" class="go" href="https://lop-toan-thay-trinh.onrender.com/" target="_blank" rel="noopener">Vào làm trắc nghiệm →</a>
       <small>Lần đầu mở có thể phải chờ vài chục giây để hệ thống khởi động.</small>
     </div>
   </section>
@@ -103,10 +122,23 @@ footer{padding-bottom:80px}
     <select id="fType"><option value="">Tất cả loại đề</option></select>
     <select id="fYear"><option value="">Tất cả năm học</option></select>
   </div>
+  <label class="only"><input type="checkbox" id="fExtra"> Chỉ hiện tài liệu có video giải hoặc lời giải</label>
   <div id="list"></div>
 </main>
 
-<a class="fab" href="https://lop-toan-thay-trinh.onrender.com/" target="_blank" rel="noopener">📝 Làm trắc nghiệm</a>
+<a data-track="lien-ket/trac-nghiem-online" data-title="Nút vào app trắc nghiệm" class="fab" href="https://lop-toan-thay-trinh.onrender.com/" target="_blank" rel="noopener">📝 Làm trắc nghiệm</a>
+
+
+<div class="modal" id="vModal" role="dialog" aria-modal="true" aria-labelledby="vTitle">
+  <div class="modal-box">
+    <div class="modal-head">
+      <div class="modal-title" id="vTitle"></div>
+      <button class="modal-x" id="vClose" aria-label="Đóng video" type="button">×</button>
+    </div>
+    <div class="ratio"><iframe id="vFrame" title="Video giải" allow="accelerometer; autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+    <div class="modal-foot"><a class="btn alt" id="vOpen" href="#" target="_blank" rel="noopener">Mở trên YouTube</a></div>
+  </div>
+</div>
 
 <footer>© Lớp Toán Thầy Trịnh – 0936032378</footer>
 
@@ -117,8 +149,44 @@ footer{padding-bottom:80px}
    và Word vào thư mục "tai-lieu" (đặt tên đúng quy ước), vài phút sau
    trang sẽ tự cập nhật.
    ============================================================ */
+/* ---------- THỐNG KÊ LƯỢT TẢI (GoatCounter) ----------
+   Điền mã tài khoản GoatCounter vào đây, ví dụ: "lop-toan-thay-trinh"
+   (tức là trang thống kê có địa chỉ https://lop-toan-thay-trinh.goatcounter.com).
+   Để trống thì trang vẫn chạy bình thường, chỉ là chưa đếm. */
+const GC_CODE = "";
+
+if (GC_CODE) {
+  const gc = document.createElement("script");
+  gc.async = true;
+  gc.dataset.goatcounter = "https://" + GC_CODE + ".goatcounter.com/count";
+  gc.src = "https://gc.zgo.at/count.js";
+  document.head.appendChild(gc);
+}
+function track(path, title){
+  try { if (window.goatcounter && window.goatcounter.count)
+          window.goatcounter.count({path: path, title: title, event: true}); } catch(e){}
+}
+
 let DE = [];
+let BO = {};   /* dữ liệu bổ sung (video, lời giải) đọc từ bo_sung.json */
 const $ = id => document.getElementById(id);
+const stemOf = d => ((d.pdf || d.file || "").split("/").pop() || "").replace(/\.(pdf|docx)$/i, "");
+function ytId(u){
+  const m = String(u).match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/|live\/))([\w-]{11})/);
+  return m ? m[1] : "";
+}
+function openVideo(url, title){
+  const id = ytId(url);
+  if (!id) { window.open(url, "_blank", "noopener"); return; }
+  $("vTitle").textContent = title || "Video giải";
+  $("vFrame").src = "https://www.youtube-nocookie.com/embed/" + id + "?rel=0&autoplay=1";
+  $("vOpen").href = url;
+  $("vModal").classList.add("open");
+}
+function closeVideo(){
+  $("vModal").classList.remove("open");
+  $("vFrame").src = "";
+}
 const uniq = k => [...new Set(DE.map(d => d[k]))].sort();
 
 function fillFilters(){
@@ -131,10 +199,10 @@ function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;","
 
 function render(){
   const q = $("q").value.trim().toLowerCase();
-  const g = $("fGrade").value, t = $("fType").value, y = $("fYear").value;
+  const g = $("fGrade").value, t = $("fType").value, y = $("fYear").value, x = $("fExtra").checked;
   const rows = [...DE].reverse().filter(d =>   /* đề thêm sau cùng hiện lên đầu trang */
-    (!g || d.khoi === g) && (!t || d.loai === t) && (!y || d.nam === y) &&
-    (!q || [d.ten,d.truong,d.nam,d.khoi,d.loai].join(" ").toLowerCase().includes(q))
+    (!g || d.khoi === g) && (!t || d.loai === t) && (!y || d.nam === y) && (!x || d.video || d.giai) &&
+    (!q || [d.ten,d.truong,d.nam,d.khoi,d.loai,d.video?"video giải":"",d.giai?"lời giải":""].join(" ").toLowerCase().includes(q))
   );
   $("count").textContent = rows.length === DE.length ? DE.length + " tài liệu" : rows.length + " / " + DE.length + " tài liệu";
   $("list").innerHTML = rows.length ? rows.map(d => `
@@ -143,20 +211,39 @@ function render(){
         <h3>${esc(d.ten)}</h3>
         <span class="tag">${esc(d.truong)}</span><span class="tag">${esc(d.khoi)}</span>
         <span class="tag">${esc(d.loai)}</span><span class="tag">${esc(d.nam)}</span>
+        ${d.video ? '<span class="tag vid">🎬 Có video giải</span>' : ""}${d.giai ? '<span class="tag sol">📝 Có lời giải</span>' : ""}
       </div>
       <div class="btns">
-        ${d.pdf ? `<a class="btn alt" href="${esc(d.pdf)}" target="_blank" rel="noopener">Xem PDF</a>` : ""}
-        ${d.file ? `<a class="btn" href="${esc(d.file)}" download>Tải Word</a>` : ""}
+        ${d.video ? `<a class="btn video" href="${esc(d.video)}" data-video="${esc(d.video)}" data-title="${esc(d.ten)}" data-track="video/${esc(stemOf(d))}" target="_blank" rel="noopener">▶ Video giải</a>` : ""}
+        ${d.giai ? `<a class="btn giai" href="${esc(d.giai)}" data-track="${esc(d.giai)}" data-title="${esc(d.ten)} (lời giải)" target="_blank" rel="noopener">Lời giải PDF</a>` : ""}
+        ${d.pdf ? `<a class="btn alt" href="${esc(d.pdf)}" data-track="${esc(d.pdf)}" data-title="${esc(d.ten)}" target="_blank" rel="noopener">Xem PDF</a>` : ""}
+        ${d.file ? `<a class="btn" href="${esc(d.file)}" data-track="${esc(d.file)}" data-title="${esc(d.ten)}" download>Tải Word</a>` : ""}
       </div>
     </div>`).join("") : '<div class="empty">Chưa có đề phù hợp.</div>';
 }
 
 ["q","fGrade","fType","fYear"].forEach(id => $(id).addEventListener("input", render));
+$("fExtra").addEventListener("change", render);
+document.addEventListener("click", e => {
+  const a = e.target.closest("a[data-track]");
+  if (a) track(a.dataset.track, a.dataset.title || a.dataset.track);
+  const v = e.target.closest("a[data-video]");
+  if (v) { e.preventDefault(); openVideo(v.dataset.video, v.dataset.title); }
+});
+$("vClose").addEventListener("click", closeVideo);
+$("vModal").addEventListener("click", e => { if (e.target === $("vModal")) closeVideo(); });
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeVideo(); });
 
 $("list").innerHTML = '<div class="empty">Đang tải danh sách tài liệu…</div>';
-fetch("docs.json?v=" + Date.now(), {cache: "no-store"})
+const getJSON = (u, soft) => fetch(u + "?v=" + Date.now(), {cache: "no-store"})
   .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
-  .then(data => { DE = data; fillFilters(); render(); })
+  .catch(err => { if (soft) return {}; throw err; });
+Promise.all([getJSON("docs.json", false), getJSON("bo_sung.json", true)])
+  .then(([data, bo]) => {
+    DE = data; BO = bo || {};
+    DE.forEach(d => { const x = BO[stemOf(d)]; if (x) { d.video = x.video || ""; d.giai = x.giai || ""; } });
+    fillFilters(); render();
+  })
   .catch(() => { $("list").innerHTML = '<div class="empty">Không tải được danh sách tài liệu. Vui lòng tải lại trang (Ctrl+F5).</div>'; });
 </script>
 </body>
