@@ -1098,5 +1098,65 @@
     "pdf": "tai-lieu/De_Cuong_On_Tap_Cuoi_Ki_2_Toan_9_Phan_Boi_Chau_2025-2026.pdf",
     "file": "tai-lieu/De_Cuong_On_Tap_Cuoi_Ki_2_Toan_9_Phan_Boi_Chau_2025-2026.docx",
     "auto": true
+  },
+  {
+    "ten": "Đề thi cuối kì 2 Toán 9 Trường THCS Chu Văn An năm học 2025-2026",
+    "truong": "THCS Chu Văn An",
+    "khoi": "Lớp 9",
+    "loai": "Cuối kì II",
+    "nam": "2025-2026",
+    "pdf": "tai-lieu/De_Cuoi_Ki_2_Toan_9_Chu_Van_An_2025-2026.pdf",
+    "file": "tai-lieu/De_Cuoi_Ki_2_Toan_9_Chu_Van_An_2025-2026.docx",
+    "auto": true
+  },
+  {
+    "ten": "Đề cương ôn tập cuối kì 2 Toán 7 Trường THCS Trưng Vương năm học 2025-2026",
+    "truong": "THCS Trưng Vương",
+    "khoi": "Lớp 7",
+    "loai": "Đề cương",
+    "nam": "2025-2026",
+    "pdf": "tai-lieu/De_Cuong_Cuoi_Ki_2_Toan_7_Trung_Vuong_2025-2026.pdf",
+    "file": "tai-lieu/De_Cuong_Cuoi_Ki_2_Toan_7_Trung_Vuong_2025-2026.docx",
+    "auto": true
+  },
+  {
+    "ten": "Đề cương ôn tập cuối kì 2 Toán 8 Trường THCS Huỳnh Thúc Kháng năm học 2025-2026",
+    "truong": "THCS Huỳnh Thúc Kháng",
+    "khoi": "Lớp 8",
+    "loai": "Đề cương",
+    "nam": "2025-2026",
+    "pdf": "tai-lieu/De_Cuong_Cuoi_Ki_2_Toan_8_Huynh_Thuc_Khang_2025-2026.pdf",
+    "file": "tai-lieu/De_Cuong_Cuoi_Ki_2_Toan_8_Huynh_Thuc_Khang_2025-2026.docx",
+    "auto": true
+  },
+  {
+    "ten": "Đề cương ôn tập cuối kì 2 Toán 6 Trường THCS Trưng Vương năm học 2025-2026",
+    "truong": "THCS Trưng Vương",
+    "khoi": "Lớp 6",
+    "loai": "Đề cương",
+    "nam": "2025-2026",
+    "pdf": "tai-lieu/De_Cuong_On_Tap_Cuoi_Ki_2_Toan_6_Trung_Vuong_2025-2026.pdf",
+    "file": "tai-lieu/De_Cuong_On_Tap_Cuoi_Ki_2_Toan_6_Trung_Vuong_2025-2026.docx",
+    "auto": true
+  },
+  {
+    "ten": "Đề cương ôn tập cuối kì 2 Toán 9 Trường THCS Nguyễn Lương Bằng năm học 2025-2026",
+    "truong": "THCS Nguyễn Lương Bằng",
+    "khoi": "Lớp 9",
+    "loai": "Đề cương",
+    "nam": "2025-2026",
+    "pdf": "tai-lieu/De_Cuong_On_Tap_Cuoi_Ki_2_Toan_9_Nguyen_Luong_Bang_2025-2026.pdf",
+    "file": "tai-lieu/De_Cuong_On_Tap_Cuoi_Ki_2_Toan_9_Nguyen_Luong_Bang_2025-2026.docx",
+    "auto": true
+  },
+  {
+    "ten": "Đề thi giữa kì 2 Toán 7 Trường THCS Tây Sơn năm học 2025-2026 – Mã đề 1",
+    "truong": "THCS Tây Sơn",
+    "khoi": "Lớp 7",
+    "loai": "Giữa kì II",
+    "nam": "2025-2026",
+    "pdf": "tai-lieu/De_Giua_Ki_2_Toan_7_Tay_Son_2025-2026_Ma_De_1.pdf",
+    "file": "tai-lieu/De_Giua_Ki_2_Toan_7_Tay_Son_2025-2026_Ma_De_1.docx",
+    "auto": true
   }
 ]
